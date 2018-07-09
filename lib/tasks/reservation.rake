@@ -5,7 +5,7 @@ namespace :reservation do
     args.with_defaults(count: 1)
 
     args[:count].to_i.times do |i|
-      CreateReservationJob.perform_later("res_#{i}")
+      CreateReservationWorker.perform_async("res_#{i}")
     end
   end
 end
