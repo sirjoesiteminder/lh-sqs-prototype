@@ -1,0 +1,17 @@
+
+version: '3'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+
+  shoryuyken:
+    build: .
+    command: bundle exec shoryuken -R -C config/shoryuken.yml
+    volumes:
+      - .:/app
