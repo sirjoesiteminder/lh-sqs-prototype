@@ -1,5 +1,5 @@
 delay: 5
-concurrency: 1
+concurrency: 25
 queues:
   - lh-inventory
   - lh-report
